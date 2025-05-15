@@ -1,0 +1,14 @@
+# Use a lightweight base image
+FROM python:3.9-slim
+
+# Set working directory
+WORKDIR /app
+
+# Create a simple HTML file
+RUN echo "<h1>Hello from Docker!</h1>" > index.html
+
+# Expose port 80
+EXPOSE 80
+
+# Run a simple HTTP server on port 80
+CMD ["python3", "-m", "http.server", "80"]
